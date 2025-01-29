@@ -1,0 +1,173 @@
+import React from 'react'
+
+export default function Achievements() {
+  return (
+    <div><div
+              id='section7'
+                style={{
+                  padding: "50px 20px",
+                  backgroundColor: "black",
+                  textAlign: "center",
+                }}
+              >
+                <h2
+                  style={{
+                    fontSize: "2rem",
+                    color: "#fff",
+                    marginBottom: "20px",
+                    animation: "fadeInUp 1s ease-out",
+                  }}
+                >
+                  Your Achievements, Certified!
+                </h2>
+    
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    color: "#fff",
+                    marginBottom: "40px",
+                    animation: "fadeInUp 1s ease-out",
+                    animationDelay: "0.3s",
+                  }}
+                >
+                  Explore our certificate services to showcase your accomplishments.
+                </p>
+    
+                {/* Container for boxes */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "20px",
+                    justifyContent: "center",
+                    maxWidth: "1200px",
+                    margin: "0 auto",
+                  }}
+                >
+                  {/* Data for the boxes */}
+                  {[
+                    {
+                      title: "Participation Certificates",
+                      description:
+                        "Get certificates for participating in events, competitions, or workshops.",
+                      icon: "fa-trophy", // Font Awesome Icon for participation
+                      iconColor: "#FFD700", // Gold for participation
+                    },
+                    {
+                      title: "Course Completion Certificates",
+                      description:
+                        "Certify your learning achievements with professional course completion certificates.",
+                      icon: "fa-graduation-cap", // Font Awesome Icon for course completion
+                      iconColor: "#4CAF50", // Green for completion
+                    },
+                    {
+                      title: "Appreciation Certificates",
+                      description:
+                        "Show gratitude and recognize contributions with appreciation certificates.",
+                      icon: "fa-thumbs-up", // Font Awesome Icon for appreciation
+                      iconColor: "#2196F3", // Blue for appreciation
+                    },
+                    {
+                      title: "Achievement Certificates",
+                      description:
+                        "Celebrate your milestones with achievement certificates.",
+                      icon: "fa-certificate", // Font Awesome Icon for achievements
+                      iconColor: "#FF5722", // Orange for achievements
+                    },
+                    {
+                      title: "Certification of Excellence",
+                      description:
+                        "Showcase outstanding performance with certificates of excellence.",
+                      icon: "fa-star", // Font Awesome Icon for excellence
+                      iconColor: "#FF9800", // Orange for excellence
+                    },
+                    {
+                      title: "Custom Certificates",
+                      description:
+                        "Create personalized certificates tailored to your needs.",
+                      icon: "fa-pencil-alt", // Font Awesome Icon for customization
+                      iconColor: "#9C27B0", // Purple for customization
+                    },
+                  ].map((box, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        flex: "0 1 calc(33.33% - 20px)", // Three boxes per row with a gap
+                        backgroundColor: "white",
+                        borderRadius: "10px",
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                        textAlign: "center",
+                        position: "relative",
+                        overflow: "hidden",
+                        transition: "transform 0.3s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.05)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
+                    >
+                      {/* Icon */}
+                      <i
+                        className={`fa ${box.icon}`}
+                        style={{
+                          fontSize: "2.5rem",
+                          color: box.iconColor, // Dynamic color for the icon
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      ></i>
+    
+                      {/* Title */}
+                      <h4
+                        style={{
+                          fontSize: "1.5rem",
+                          color: "#333",
+                          margin: "15px 0",
+                        }}
+                      >
+                        {box.title}
+                      </h4>
+    
+                      {/* Description */}
+                      <p
+                        style={{
+                          fontSize: "1rem",
+                          color: "#555",
+                          padding: "0 10px",
+                        }}
+                      >
+                        {box.description}
+                      </p>
+    
+                      {/* Button */}
+                      <button
+                        style={{
+                          padding: "10px 20px",
+                          backgroundColor: "#333",
+                          color: "white",
+                          border: "none",
+                          borderRadius: "25px",
+                          fontSize: "1rem",
+                          fontWeight: "bold",
+                          cursor: "pointer",
+                          marginBottom: "20px",
+                          transition: "background-color 0.3s ease",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.target.style.backgroundColor = "#555")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.target.style.backgroundColor = "#333")
+                        }
+                        onClick={() => alert(`Explore ${box.title}!`)}
+                      >
+                        Explore Now
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div></div>
+  )
+}

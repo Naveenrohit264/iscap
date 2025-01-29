@@ -1,0 +1,110 @@
+.navbar {
+  background-color: black;
+  padding: 5px 0; /* Navbar remains thin */
+  transition: background-color 0.3s ease;
+
+  width: 100%;
+  border-bottom: 2px solid gold;
+
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top of the page */
+  left: 0; /* Ensures the navbar starts from the left edge */
+  z-index: 1000; /* Makes sure the navbar is on top of other content */
+}
+
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Logo styling */
+  .logo-img {
+    height: 70px; /* Slightly larger logo height */
+    width: auto; /* Maintain aspect ratio */
+    margin-left: 30px;
+    transform: scale(3.0); /* Increase the size without affecting navbar height */
+  }
+  
+  /* Navigation links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .nav-links li {
+    margin-left: 10px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0rem;
+    padding: 5px 10px; /* Same padding for thin navbar */
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .nav-links a:hover {
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    transform: scale(1.1);
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .logo-img {
+        height: 60px; /* Adjusted for smaller screens */
+        transform: scale(2.5); /* Slightly smaller scaling for mobile */
+        margin-left: -1px;
+    }
+  
+    .nav-links {
+        width: 100%;
+        display:inline;
+        font-weight: 800;
+        flex-direction: column;
+        margin-top: 0.5rem; /* Minimal spacing above links */
+    }
+  
+    .nav-links li {
+        margin: 5px 0;
+    }
+  
+    .navbar.active .nav-links {
+        display: flex;
+    }
+  
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+  
+    .hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+        margin: 5px 0;
+    }
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
