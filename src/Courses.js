@@ -141,7 +141,7 @@ export default function Courses() {
       {/* Right Image */}
       <div style={{ flex: 1, textAlign: "center" }}>
         <img
-          src="./Levelup.avif" // Replace with your image URL
+          src="levelup.avif" // Replace with your image URL
           alt="Upskill Illustration"
           style={{
             maxWidth: "60%",
